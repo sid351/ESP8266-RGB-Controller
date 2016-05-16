@@ -1,6 +1,6 @@
 --ESP as Wifi CLIENT settings
 wifi.setmode(wifi.STATION);
-dofile(wifi-credentials.lua);
+dofile(wificredentials.lua);
   --wifi-credentials.lua populates the ssid and password variables, example contents below:
   --ssid = "Network Name";
   --password = "Network Password";
