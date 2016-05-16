@@ -1,6 +1,6 @@
 --ESP as Wifi CLIENT settings
 wifi.setmode(wifi.STATION);
-dofile(wificredentials.lua);
+dofile("wificredentials.lua");
   --wifi-credentials.lua populates the ssid and password variables, example contents below:
   --ssid = "Network Name";
   --password = "Network Password";
@@ -18,7 +18,11 @@ function startWiFiAP()
 
 function wifiFallback()
   --Method to determine if connected to a network, if not fall back to AP mode - More stable than STATIONAP method
-  if wifi.sta.status() ~= 5 then startWiFiAP() end
+  if wifi.sta.status() ~= 5 
+    then 
+    startWiFiAP();
+    print("wifiFallback");
+    end
   end
 
-tmr.alarm(0,10000,0,wifiFallback());
+tmr.alarm(1, 10000, 0, function() wifiFallback() end);
