@@ -1,7 +1,7 @@
 --RGB Functions
-redPin = 1
-greenPin = 2
-bluePin = 6
+redPin = 6 --GPIO12
+greenPin = 5 --GPIO14
+bluePin = 7 --GPIO13
 
 function initRGB(redPin, greenPin, bluePin, clock, duty)
     pwm.setup(redPin, clock, duty)
